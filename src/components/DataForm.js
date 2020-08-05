@@ -53,15 +53,15 @@ function DataForm() {
 
         console.log(results);
         console.log(firstDigitArr);
-        console.log(fOne);
-        console.log(fTwo);
-        console.log(fThree);
-        console.log(fFour);
-        console.log(fFive);
-        console.log(fSix);
-        console.log(fSeven);
-        console.log(fEight);
-        console.log(fNine);
+        console.log(`There are ${fOne} 1s`);
+        console.log(`There are ${fTwo} 2s`);
+        console.log(`There are ${fThree} 3s`);
+        console.log(`There are ${fFour} 4s`);
+        console.log(`There are ${fFive} 5s`);
+        console.log(`There are ${fSix} 6s`);
+        console.log(`There are ${fSeven} 7s`);
+        console.log(`There are ${fEight} 8s`);
+        console.log(`There are ${fNine} 9s`);
         
       };
 
