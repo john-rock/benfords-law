@@ -73,7 +73,7 @@ const Chart = () => {
         },
     ];
 
-    console.log(chartData)
+    // console.log(chartData)
 
     return (
         <div className="component">
@@ -85,11 +85,10 @@ const Chart = () => {
                 top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
                 <XAxis stroke="white" dataKey="name" />
                 <YAxis stroke="white" />
-                <Tooltip />
-                <Bar dataKey="Frequency" fill="#F82E87" />
+                <Tooltip cursor={false} />
+                <Bar dataKey="Frequency" fill="#01AD73" />
                 <Legend />
             </BarChart>
         </div>

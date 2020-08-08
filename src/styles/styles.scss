@@ -4,10 +4,7 @@
 @import './header';
 
 body{
-    background: #545569;
-    background: -webkit-linear-gradient(top left, #545569, #292935);
-    background: -moz-linear-gradient(top left, #545569, #292935);
-    background: linear-gradient(to bottom right, #545569, #292935);
+    background: #1f2024;
     font-family: $primary-font;
 }
 
@@ -37,5 +34,9 @@ textarea{
 }
 
 .recharts-cartesian-axis-tick-value{
+    color:#fff;
+}
+
+.recharts-legend-item-text{
     color:#fff;
 }

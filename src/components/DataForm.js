@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { StateMachineProvider, createStore } from 'little-state-machine';
-import { useStateMachine } from 'little-state-machine';
+import { StateMachineProvider, useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
 
 const DataForm = () => {
     const { action } = useStateMachine(updateAction);
+
+    // console.log(state)
 
     const ParseTextarea = ({ value = [], onChange }) => {
         const [text, setText] = useState(value.join('\n'));
@@ -27,7 +28,7 @@ const DataForm = () => {
         );
     };
 
-    const { control, handleSubmit } = useForm({
+    const { control, handleSubmit, reset } = useForm({
         defaultValues: {
             dataSet: [],
         },
@@ -36,6 +37,12 @@ const DataForm = () => {
     const onSubmit = (data) => {
         action(data);
     };
+
+    function clearForm() {
+      window.STATE_MACHINE_RESET()
+      reset()
+    }
+
 
     return (
         <>
@@ -48,7 +55,7 @@ const DataForm = () => {
                         control={control}
                     />
                     <button className="submit" type="submit">Submit</button>
-                    <button className="clear" type="submit">Clear Data</button>
+                    <button className="clear" onClick={clearForm}>Clear Data</button> 
                 </form>
             </div>
         </>
