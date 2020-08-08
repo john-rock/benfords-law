@@ -5,7 +5,7 @@ import './styles/reset.scss';
 import './styles/App.css';
 
 import DataForm from './components/DataForm'
-import DataView from './components/DataView'
+import Chart from './components/Chart'
 
 
 
@@ -19,7 +19,7 @@ function App() {
     <StateMachineProvider>
       <div className="App">
           <DataForm />
-          <DataView />
+          <Chart />
       </div>
     </StateMachineProvider>
   );
