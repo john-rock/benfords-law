@@ -5,9 +5,7 @@ import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
 
 const DataForm = () => {
-
     const { action } = useStateMachine(updateAction);
-
 
     const ParseTextarea = ({ value = [], onChange }) => {
         const [text, setText] = useState(value.join('\n'));
@@ -34,25 +32,25 @@ const DataForm = () => {
             dataSet: [],
         },
     });
-    
 
     const onSubmit = (data) => {
-
         action(data);
-
     };
 
     return (
         <>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Controller
-                    key="key"
-                    name="dataSet"
-                    as={ParseTextarea}
-                    control={control}
-                />
-                <button type="submit">Submit</button>
-            </form>
+            <div className="component">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <Controller
+                        key="key"
+                        name="dataSet"
+                        as={ParseTextarea}
+                        control={control}
+                    />
+                    <button className="submit" type="submit">Submit</button>
+                    <button className="clear" type="submit">Clear Data</button>
+                </form>
+            </div>
         </>
     );
 };

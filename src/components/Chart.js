@@ -2,7 +2,7 @@ import React from 'react';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
 import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend
   } from 'recharts';
   
 
@@ -24,77 +24,74 @@ const Chart = () => {
         firstDigitFreq[num] = firstDigitFreq[num] ? firstDigitFreq[num] + 1 : 1;
     }
 
-    const fOne = firstDigitFreq[1];
-    const fTwo = firstDigitFreq[2];
-    const fThree = firstDigitFreq[3];
-    const fFour = firstDigitFreq[4];
-    const fFive = firstDigitFreq[5];
-    const fSix = firstDigitFreq[6];
-    const fSeven = firstDigitFreq[7];
-    const fEight = firstDigitFreq[8];
-    const fNine = firstDigitFreq[9];
+    const fOne = firstDigitFreq[1] || 0;
+    const fTwo = firstDigitFreq[2] || 0;
+    const fThree = firstDigitFreq[3] || 0;
+    const fFour = firstDigitFreq[4] || 0;
+    const fFive = firstDigitFreq[5] || 0;
+    const fSix = firstDigitFreq[6] || 0;
+    const fSeven = firstDigitFreq[7] || 0;
+    const fEight = firstDigitFreq[8] || 0;
+    const fNine = firstDigitFreq[9] || 0;
 
     const chartData = [
         {
             name: '1',
-            freq: fOne,
+            Frequency: fOne,
         },
         {
             name: '2',
-            freq: fTwo,
+            Frequency: fTwo,
         },
         {
             name: '3',
-            freq: fThree,
+            Frequency: fThree,
         },
         {
             name: '4',
-            freq: fFour,
+            Frequency: fFour,
         },
         {
             name: '5',
-            freq: fFive,
+            Frequency: fFive,
         },
         {
             name: '6',
-            freq: fSix,
+            Frequency: fSix,
         },
         {
             name: '7',
-            freq: fSeven,
+            Frequency: fSeven,
         },
         {
             name: '8',
-            freq: fEight,
+            Frequency: fEight,
         },
         {
             name: '9',
-            freq: fNine,
+            Frequency: fNine,
         },
     ];
 
     console.log(chartData)
 
     return (
-        <div>
-            <p>Results</p>
+        <div className="component">
             <BarChart
-                width={500}
-                height={300}
+                width={900}
+                height={400}
                 data={chartData}
                 margin={{
                 top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <XAxis stroke="white" dataKey="name" />
+                <YAxis stroke="white" />
                 <Tooltip />
+                <Bar dataKey="Frequency" fill="#F82E87" />
                 <Legend />
-                <Bar dataKey="freq" fill="#8884d8" />
             </BarChart>
-            {/* {firstDigitArr.map(result => <div>{result}</div>)} */}
-            {/* <pre>{JSON.stringify(state, null, 2)}</pre> */}
         </div>
     );
 };

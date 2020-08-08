@@ -1,0 +1,12 @@
+.header{
+    background-color: rgba(255, 255, 255, 0.05);
+    flex:1 1 100%;
+    margin:0 0 4rem;
+    padding:1rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
+    .logo{
+        font-size: 2rem;
+        font-weight:700;
+        color:#fff;
+    }
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 import { StateMachineProvider, createStore } from "little-state-machine";
 
-import './styles/reset.scss';
+import './styles/styles.scss';
 import './styles/App.css';
 
+import Header from './components/Header'
 import DataForm from './components/DataForm'
 import Chart from './components/Chart'
 
@@ -17,9 +18,12 @@ function App() {
   
   return (
     <StateMachineProvider>
-      <div className="App">
-          <DataForm />
-          <Chart />
+      <div className="app">
+        <div className="container">
+            <Header />
+            <DataForm />
+            <Chart />
+        </div>
       </div>
     </StateMachineProvider>
   );

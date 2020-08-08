@@ -1,0 +1,41 @@
+@import './reset';
+@import './variables';
+@import './input';
+@import './header';
+
+body{
+    background: #545569;
+    background: -webkit-linear-gradient(top left, #545569, #292935);
+    background: -moz-linear-gradient(top left, #545569, #292935);
+    background: linear-gradient(to bottom right, #545569, #292935);
+    font-family: $primary-font;
+}
+
+.app{
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row wrap;
+        max-width:1440px;
+        width:100%;
+        margin:2rem auto;
+    }
+}
+
+.component{
+    background: #404351;
+background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
+background: -moz-linear-gradient(top left, #404351, #2E2D3A);
+background: linear-gradient(to bottom right, #404351, #2E2D3A);
+    padding:1rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
+}
+
+textarea{
+    min-height: 300px;
+}
+
+.recharts-cartesian-axis-tick-value{
+    color:#fff;
+}

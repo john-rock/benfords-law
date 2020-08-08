@@ -1,0 +1,54 @@
+textarea {
+    background:none;
+    border:none;
+    color:#fff;
+}
+
+button {
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    /* Remove excess padding and border in Firefox 4+ */
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    cursor: pointer;
+    width: 100%;
+    border-radius: 14px;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+
+    &.submit {
+        background: #F82E87;
+background: -webkit-linear-gradient(left, #F82E87, #FE6B85);
+background: -moz-linear-gradient(left, #F82E87, #FE6B85);
+background: linear-gradient(to right, #F82E87, #FE6B85);
+        color: #fff;
+    }
+
+    &.clear {
+        color:#fff;
+    }
+}
