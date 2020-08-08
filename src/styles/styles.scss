@@ -17,6 +17,7 @@ body{
         max-width:1440px;
         width:100%;
         margin:2rem auto;
+        padding:0 1rem;
     }
 }
 
@@ -29,14 +30,19 @@ background: linear-gradient(to bottom right, #404351, #2E2D3A);
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
 }
 
-textarea{
-    min-height: 300px;
-}
-
 .recharts-cartesian-axis-tick-value{
     color:#fff;
 }
 
 .recharts-legend-item-text{
     color:#fff;
+}
+
+.intro-text{
+    flex:1 1 100%;
+    color:#fff;
+    margin:0 0 2rem;
+    p{
+        max-width:420px;
+    }
 }

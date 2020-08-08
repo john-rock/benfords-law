@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { StateMachineProvider, useStateMachine } from 'little-state-machine';
+import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
 
 const DataForm = () => {
     const { action } = useStateMachine(updateAction);
-
-    // console.log(state)
 
     const ParseTextarea = ({ value = [], onChange }) => {
         const [text, setText] = useState(value.join('\n'));
@@ -18,12 +16,15 @@ const DataForm = () => {
             onChange(value.split('\n'));
         };
 
+        const placeholder = "Enter data seperated by a line break.\n1\n2\n3\n4"
+
         return (
             <textarea
                 name="Data"
                 key="key"
                 onChange={handleChange}
                 value={text}
+                placeholder={placeholder}
             />
         );
     };
@@ -39,10 +40,9 @@ const DataForm = () => {
     };
 
     function clearForm() {
-      window.STATE_MACHINE_RESET()
-      reset()
+      window.STATE_MACHINE_RESET();
+      reset();
     }
-
 
     return (
         <>

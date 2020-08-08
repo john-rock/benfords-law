@@ -7,6 +7,7 @@ import './styles/App.css';
 import Header from './components/Header'
 import DataForm from './components/DataForm'
 import Chart from './components/Chart'
+import Info from './components/Info'
 
 
 
@@ -19,8 +20,9 @@ function App() {
   return (
     <StateMachineProvider>
       <div className="app">
+      <Header />
         <div className="container">
-            <Header />
+            <Info />
             <DataForm />
             <Chart />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend
+    BarChart, Bar, XAxis, YAxis, Tooltip, Legend
   } from 'recharts';
   
 
@@ -72,8 +72,6 @@ const Chart = () => {
             Frequency: fNine,
         },
     ];
-
-    // console.log(chartData)
 
     return (
         <div className="component">
