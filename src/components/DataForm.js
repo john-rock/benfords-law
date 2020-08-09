@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
+import { usCityPopulation } from '../datasets/usCityPopulation';
 
 const DataForm = () => {
     const { action } = useStateMachine(updateAction);
-    
 
     const ParseTextarea = ({ value = [], onChange }) => {
         const [text, setText] = useState(value.join('\n'));
@@ -15,10 +15,9 @@ const DataForm = () => {
 
             setText(value);
             onChange(value.split('\n'));
-
         };
 
-        const placeholder = "1\n2\n3\n4\n5\n6\n7\n8\n9"
+        const placeholder = '1\n2\n3\n4\n5\n6\n7\n8\n9';
 
         return (
             <textarea
@@ -28,12 +27,11 @@ const DataForm = () => {
                 onChange={handleChange}
                 value={text}
                 placeholder={placeholder}
-                ref={register}
             />
         );
     };
 
-    const { control, handleSubmit, register, setValue, reset } = useForm({
+    const { control, handleSubmit, setValue, reset } = useForm({
         defaultValues: {
             dataSet: [],
         },
@@ -41,28 +39,18 @@ const DataForm = () => {
 
     const onSubmit = (data) => {
         action(data);
-        console.log(data)
+        console.log(data);
     };
 
-    function clearForm() {
-      window.STATE_MACHINE_RESET();
-      reset();
-    }
+    const clearForm = () => {
+        window.STATE_MACHINE_RESET();
+        reset();
+    };
 
-    const cityPopulation = ["8,336,817", "3,979,576", "2,693,976", "2,320,268", "1,680,992", "1,584,064 "]
+    const setCityPopulation = () => {
+        setValue('dataSet', usCityPopulation);
+    };
 
-    // function setTextArea(dataSet) {
-    //   // action({ dataSet: cityPopulation})
-    //   // var textarea = document.getElementById("Data");
-    //   // textarea.value = cityPopulation.join("\n");
-    //   setValue(dataSet, cityPopulation)
-
-    // }
-
-
-
-    console.log(cityPopulation) 
-    
     return (
         <>
             <div className="component">
@@ -73,9 +61,16 @@ const DataForm = () => {
                         as={ParseTextarea}
                         control={control}
                     />
-                    <button className="submit" type="submit">Submit</button>
-                    <button className="clear" onClick={clearForm}>Clear Data</button> 
-                    <button className="clear" onClick={() => setValue("dataSet", cityPopulation)}>Set Data</button>
+                    <button className="submit" type="submit">
+                        Submit
+                    </button>
+                    <button className="clear" onClick={clearForm}>
+                        Clear Data
+                    </button>
+                    <p className="example-data">Example Data:</p>
+                    <button className="clear" onClick={setCityPopulation}>
+                        2019 U.S. City Population
+                    </button>
                 </form>
             </div>
         </>

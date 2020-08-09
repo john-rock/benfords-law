@@ -23,9 +23,9 @@ body{
 
 .component{
     background: #404351;
-background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
-background: -moz-linear-gradient(top left, #404351, #2E2D3A);
-background: linear-gradient(to bottom right, #404351, #2E2D3A);
+    background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
+    background: -moz-linear-gradient(top left, #404351, #2E2D3A);
+    background: linear-gradient(to bottom right, #404351, #2E2D3A);
     padding:1rem;
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
 }
@@ -45,4 +45,11 @@ background: linear-gradient(to bottom right, #404351, #2E2D3A);
     p{
         margin-bottom:.5rem;
     }
+}
+
+.example-data{
+    color:#fff;
+    font-size:.8rem;
+    opacity: .2;
+    margin-top:2rem;
 }
