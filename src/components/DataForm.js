@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
-import { usCityPopulation } from '../datasets/usCityPopulation';
+import { randomData, countryPopulation, augustCovidCases } from '../datasets/datasets';
 
 const DataForm = () => {
     const { action } = useStateMachine(updateAction);
@@ -39,7 +39,6 @@ const DataForm = () => {
 
     const onSubmit = (data) => {
         action(data);
-        console.log(data);
     };
 
     const clearForm = () => {
@@ -47,13 +46,19 @@ const DataForm = () => {
         reset();
     };
 
-    const setCityPopulation = () => {
-        setValue('dataSet', usCityPopulation);
+    const setRandomData = () => {
+      setValue('dataSet', randomData);
+    };
+    const setCountryPopulation= () => {
+      setValue('dataSet', countryPopulation);
+    };
+    const setAugustCovidPopulation= () => {
+      setValue('dataSet', augustCovidCases);
     };
 
     return (
         <>
-            <div className="component">
+            <div className="component input-form">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Controller
                         key="key"
@@ -68,8 +73,16 @@ const DataForm = () => {
                         Clear Data
                     </button>
                     <p className="example-data">Example Data:</p>
-                    <button className="clear" onClick={setCityPopulation}>
-                        2019 U.S. City Population
+                    <button className="clear example-btn" onClick={setAugustCovidPopulation}>
+                        Total COVID-19 Cases by Country
+                        <span>August 2020</span>
+                    </button>
+                    <button className="clear example-btn" onClick={setCountryPopulation}>
+                        Population of Countries
+                    </button>
+                    <button className="clear example-btn" onClick={setRandomData}>
+                        Random Data
+                        <span>Does not follow Benford's Law</span>
                     </button>
                 </form>
             </div>

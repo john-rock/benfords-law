@@ -1,0 +1,30 @@
+.chart{
+    display:flex;
+    flex-direction: column;
+    &:nth-of-type(1){
+        flex:1 1 100%;
+    }
+    .small{
+        margin:2rem;
+    }
+
+    .info-container{
+        display:flex;
+        flex-direction: row wrap;
+        .inner{
+            flex:0 0 24%;
+            text-align: left;
+            color:#fff;
+            padding: 1rem;
+            margin:1rem;
+            font-size: .8rem;
+            span{
+                display: block;
+                font-size:2rem;
+            }
+        }
+    }
+    .recharts-label{
+        color:#fff;
+    }
+}

@@ -2,11 +2,25 @@
 @import './variables';
 @import './input';
 @import './header';
+@import './charts';
 
 body{
     background: #1f2024;
     font-family: $primary-font;
 }
+
+a {
+    color:#fff;
+    transition: color 200ms ease;
+    &:visited {
+        color:$primary-color;
+    }
+    &:hover, &:active {
+        color:$primary-font !important;
+        
+    }
+  }
+
 
 .app{
     .container{
@@ -22,12 +36,14 @@ body{
 }
 
 .component{
-    background: #404351;
-    background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
-    background: -moz-linear-gradient(top left, #404351, #2E2D3A);
-    background: linear-gradient(to bottom right, #404351, #2E2D3A);
     padding:1rem;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
+    .sub-component{
+        background: #404351;
+        background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
+        background: -moz-linear-gradient(top left, #404351, #2E2D3A);
+        background: linear-gradient(to bottom right, #404351, #2E2D3A);
+        box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
+    }
 }
 
 .recharts-cartesian-axis-tick-value{
@@ -43,7 +59,7 @@ body{
     color:#fff;
     margin:0 0 2rem;
     p{
-        margin-bottom:.5rem;
+        margin-bottom:1rem;
     }
 }
 

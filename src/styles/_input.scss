@@ -1,3 +1,10 @@
+.input-form{
+    background: #404351;
+    background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
+    background: -moz-linear-gradient(top left, #404351, #2E2D3A);
+    background: linear-gradient(to bottom right, #404351, #2E2D3A);
+}
+
 textarea {
     background:none;
     border:none;
@@ -51,16 +58,42 @@ button {
 
     cursor: pointer;
     width: 100%;
-    border-radius: 14px;
+    border-radius: 4px;
     padding: 0.5rem;
     margin: 0.5rem 0;
 
     &.submit {
         background: #01AD73;
         color: #fff;
+        transition: background 200ms ease;
+        &:hover{
+            background:darken($primary-color, 4)
+        }
     }
 
     &.clear {
         color:#fff;
+        border-radius: 0;
+        border-bottom:solid 2px transparent;
+        transition: all 200ms ease;
+        &:hover, &:active {
+            border-bottom: solid 2px $primary-color
+        }
+    }
+
+    &.example-btn{
+        text-align: left;
+        padding:.5rem 0;
+        border-radius: 0;
+        border-bottom:solid 2px transparent;
+        transition: all 200ms ease;
+        span{
+            display: block;
+            font-size: .8rem;
+            opacity: .3;
+        }
+        &:hover, &:active {
+            border-bottom: solid 2px $primary-color
+        }
     }
 }
