@@ -5,6 +5,7 @@ import updateAction from '../utils/updateAction';
 
 const DataForm = () => {
     const { action } = useStateMachine(updateAction);
+    
 
     const ParseTextarea = ({ value = [], onChange }) => {
         const [text, setText] = useState(value.join('\n'));
@@ -14,22 +15,25 @@ const DataForm = () => {
 
             setText(value);
             onChange(value.split('\n'));
+
         };
 
-        const placeholder = "Enter data seperated by a line break.\n1\n2\n3\n4"
+        const placeholder = "1\n2\n3\n4\n5\n6\n7\n8\n9"
 
         return (
             <textarea
                 name="Data"
-                key="key"
+                id="Data"
+                key="1"
                 onChange={handleChange}
                 value={text}
                 placeholder={placeholder}
+                ref={register}
             />
         );
     };
 
-    const { control, handleSubmit, reset } = useForm({
+    const { control, handleSubmit, register, setValue, reset } = useForm({
         defaultValues: {
             dataSet: [],
         },
@@ -37,6 +41,7 @@ const DataForm = () => {
 
     const onSubmit = (data) => {
         action(data);
+        console.log(data)
     };
 
     function clearForm() {
@@ -44,6 +49,20 @@ const DataForm = () => {
       reset();
     }
 
+    const cityPopulation = ["8,336,817", "3,979,576", "2,693,976", "2,320,268", "1,680,992", "1,584,064 "]
+
+    // function setTextArea(dataSet) {
+    //   // action({ dataSet: cityPopulation})
+    //   // var textarea = document.getElementById("Data");
+    //   // textarea.value = cityPopulation.join("\n");
+    //   setValue(dataSet, cityPopulation)
+
+    // }
+
+
+
+    console.log(cityPopulation) 
+    
     return (
         <>
             <div className="component">
@@ -56,6 +75,7 @@ const DataForm = () => {
                     />
                     <button className="submit" type="submit">Submit</button>
                     <button className="clear" onClick={clearForm}>Clear Data</button> 
+                    <button className="clear" onClick={() => setValue("dataSet", cityPopulation)}>Set Data</button>
                 </form>
             </div>
         </>
