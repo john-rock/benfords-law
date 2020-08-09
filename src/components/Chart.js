@@ -10,8 +10,12 @@ const Chart = () => {
     const { state } = useStateMachine(updateAction);
 
     let fullResults = state.data.dataSet || [];
-    let fullResultsCount = state.data.dataSet.length
+    let fullResultsCount = fullResults.length || 0;
 
+    console.log()
+
+    // let fullResultsMax = Math.max.apply(Math, fullResultsMax) || 0;
+    // let fullResultsMin = Math.min.apply(Math, fullResultsMax) || 0;
 
     // Get the first digit of each item in the dataSet array.
     const firstDigitArr = fullResults.map(function (item, index, array) {
