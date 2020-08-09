@@ -2,7 +2,7 @@ import React from 'react';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
 import {
-    BarChart, Bar, XAxis, YAxis, Tooltip, LabelList
+    BarChart, Bar, XAxis, YAxis, LabelList
   } from 'recharts';
   
 
@@ -116,8 +116,7 @@ const Chart = () => {
                 }}
             >
                 <XAxis dataKey="name" fill="rgba(255,255,255, .2)" />
-                <YAxis label={{ value: 'Leading Digit Frequency', angle: -90, position: 'insideMiddle', fill: 'rgba(255,255,255, .2)', dx: -25}} type="number" domain={[0, 40]} fill="rgba(255,255,255, .2)" />
-                <Tooltip cursor={false} />
+                <YAxis label={{ value: 'Leading Digit Frequency (%)', angle: -90, position: 'insideMiddle', fill: 'rgba(255,255,255, .2)', dx: -25}} type="number" domain={[0, 40]} fill="rgba(255,255,255, .2)" />
                 <Bar dataKey="Occurance" fill="#01AD73">
                     <LabelList dataKey="Occurance" position="top" fill="white" />
                 </Bar>
