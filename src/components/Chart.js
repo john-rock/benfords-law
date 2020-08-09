@@ -106,6 +106,10 @@ const Chart = () => {
 
     return (
         <div className="component chart">
+            <div className="info-container">
+                <div className="inner sub-component">Number of entries:<span>{fullResultsCount}</span>
+                </div>
+            </div>
             <BarChart
                 className="sub-component"
                 width={900}
@@ -117,15 +121,11 @@ const Chart = () => {
             >
                 <XAxis dataKey="name" fill="rgba(255,255,255, .2)" />
                 <YAxis label={{ value: 'Leading Digit Frequency (%)', angle: -90, position: 'insideMiddle', fill: 'rgba(255,255,255, .2)', dx: -25}} type="number" domain={[0, 40]} fill="rgba(255,255,255, .2)" />
-                <Bar dataKey="Occurance" fill="#01AD73">
-                    <LabelList dataKey="Occurance" position="top" fill="white" />
+                <Bar dataKey="Occurance" fill="#01AD73" unit='%'>
+                    <LabelList dataKey="Occurance" position="top" fill="white" unit='%'/>
                 </Bar>
                 
             </BarChart>
-            <div className="info-container">
-                <div className="inner sub-component">Number of entries:<span>{fullResultsCount}</span>
-                </div>
-            </div>
         </div>
     );
 };

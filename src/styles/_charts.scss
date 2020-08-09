@@ -16,7 +16,7 @@
             text-align: left;
             color:#fff;
             padding: 1rem;
-            margin:1rem;
+            margin:1rem 0;
             font-size: .8rem;
             span{
                 display: block;
@@ -26,5 +26,14 @@
     }
     .recharts-label{
         color:#fff;
+        tspan{
+            position: relative;
+            &:after{
+                content:'%';
+                position: absolute;
+                top:0;
+                right:0;
+            }
+        }
     }
 }
