@@ -44,9 +44,7 @@ const DataForm = () => {
     };
 
     const clearForm = () => {
-      if (typeof window !== "undefined") {
         window.STATE_MACHINE_RESET();
-      }
         reset();
     };
 
