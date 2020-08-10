@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
+import window from 'global'
 import { randomData, countryPopulation, augustCovidCases, starDistance } from '../datasets/datasets';
 
 const DataForm = () => {
