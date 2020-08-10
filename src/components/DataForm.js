@@ -43,10 +43,10 @@ const DataForm = () => {
         action(data);
     };
 
-    const clearForm = () => {
-        // stateReset()
-        reset();
-    };
+    // const clearForm = () => {
+    //     // stateReset()
+    //     reset();
+    // };
 
     const setRandomData = () => {
       setValue('dataSet', randomData);
