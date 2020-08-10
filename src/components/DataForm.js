@@ -5,7 +5,7 @@ import updateAction from '../utils/updateAction';
 import { randomData, countryPopulation, augustCovidCases, starDistance } from '../datasets/datasets';
 
 const DataForm = () => {
-    const stateReset = window.STATE_MACHINE_RESET;
+    // const stateReset = window.STATE_MACHINE_RESET;
 
     const { action } = useStateMachine(updateAction);
 
