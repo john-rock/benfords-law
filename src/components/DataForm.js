@@ -6,6 +6,7 @@ import { window } from 'browser-monads';
 import { randomData, countryPopulation, augustCovidCases, starDistance } from '../datasets/datasets';
 
 const DataForm = () => {
+    const stateReset = window.STATE_MACHINE_RESET;
 
     const { action } = useStateMachine(updateAction);
 
@@ -44,7 +45,7 @@ const DataForm = () => {
     };
 
     const clearForm = () => {
-        window.STATE_MACHINE_RESET();
+        stateReset()
         reset();
     };
 
