@@ -44,7 +44,7 @@ const DataForm = () => {
     };
 
     const clearForm = () => {
-        stateReset()
+        // stateReset()
         reset();
     };
 
@@ -74,7 +74,7 @@ const DataForm = () => {
                     <button className="submit" type="submit">
                         Submit
                     </button>
-                    <button className="clear" onClick={clearForm}>
+                    <button className="clear" onClick={() => reset()}>
                         Clear Data
                     </button>
                     <p className="example-data">Example Data:</p>
