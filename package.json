@@ -12,6 +12,7 @@
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.3.0",
     "react-scripts": "3.4.1",
+    "recharts": "^1.8.5",
     "use-global-hook": "^0.1.12"
   },
   "scripts": {

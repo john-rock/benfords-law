@@ -5,11 +5,13 @@
     padding:1rem;
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
     .header__container{
-        padding:0 1rem;
+        // padding:0 1rem;
     }
     .logo{
         font-size: 2rem;
-        font-weight:700;
+        font-weight:900;
         color:#fff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
     }
 }

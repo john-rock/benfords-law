@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
-import { randomData, countryPopulation, augustCovidCases } from '../datasets/datasets';
+import { randomData, countryPopulation, augustCovidCases, starDistance } from '../datasets/datasets';
 
 const DataForm = () => {
     const { action } = useStateMachine(updateAction);
@@ -55,6 +55,9 @@ const DataForm = () => {
     const setAugustCovidPopulation= () => {
       setValue('dataSet', augustCovidCases);
     };
+    const setStarDistance= () => {
+        setValue('dataSet', starDistance);
+      };
 
     return (
         <>
@@ -76,6 +79,10 @@ const DataForm = () => {
                     <button className="clear example-btn" onClick={setAugustCovidPopulation}>
                         Total COVID-19 Cases by Country
                         <span>August 2020</span>
+                    </button>
+                    <button className="clear example-btn" onClick={setStarDistance}>
+                        Distance to Brightest Stars
+                        <span>In lightyears from Earth</span>
                     </button>
                     <button className="clear example-btn" onClick={setCountryPopulation}>
                         Population of Countries

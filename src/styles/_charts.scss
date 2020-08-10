@@ -10,7 +10,8 @@
 
     .info-container{
         display:flex;
-        flex-direction: row wrap;
+        flex-flow: row wrap;
+        justify-content: space-between;
         .inner{
             flex:0 0 24%;
             text-align: left;
