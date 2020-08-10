@@ -5,7 +5,9 @@
     padding:1rem;
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
     .header__container{
-        // padding:0 1rem;
+        padding:0 1rem;
+        max-width:1440px;
+        margin:auto;
     }
     .logo{
         font-size: 2rem;
