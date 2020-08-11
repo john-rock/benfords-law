@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useStateMachine } from 'little-state-machine';
 import updateAction from '../utils/updateAction';
-import { randomData, countryPopulation, augustCovidCases, starDistance } from '../datasets/datasets';
+import {
+    randomData,
+    countryPopulation,
+    augustCovidCases,
+    starDistance,
+} from '../datasets/datasets';
 
 const DataForm = () => {
-    // const stateReset = window.STATE_MACHINE_RESET;
-
     const { action } = useStateMachine(updateAction);
 
     const ParseTextarea = ({ value = [], onChange }) => {
@@ -14,9 +17,10 @@ const DataForm = () => {
 
         const handleChange = (e) => {
             const value = e.target.value;
+            const newValue = value.replace(/^\s*[\r\n]/gm, '');  // Dont allow empty lines
 
-            setText(value);
-            onChange(value.split('\n'));
+            setText(newValue);
+            onChange(newValue.split('\n'));
         };
 
         const placeholder = '1\n2\n3\n4\n5\n6\n7\n8\n9';
@@ -43,23 +47,18 @@ const DataForm = () => {
         action(data);
     };
 
-    // const clearForm = () => {
-    //     // stateReset()
-    //     reset();
-    // };
-
     const setRandomData = () => {
-      setValue('dataSet', randomData);
+        setValue('dataSet', randomData);
     };
-    const setCountryPopulation= () => {
-      setValue('dataSet', countryPopulation);
+    const setCountryPopulation = () => {
+        setValue('dataSet', countryPopulation);
     };
-    const setAugustCovidPopulation= () => {
-      setValue('dataSet', augustCovidCases);
+    const setAugustCovidPopulation = () => {
+        setValue('dataSet', augustCovidCases);
     };
-    const setStarDistance= () => {
+    const setStarDistance = () => {
         setValue('dataSet', starDistance);
-      };
+    };
 
     return (
         <>
@@ -78,18 +77,30 @@ const DataForm = () => {
                         Clear Data
                     </button>
                     <p className="example-data">Example Data:</p>
-                    <button className="clear example-btn" onClick={setAugustCovidPopulation}>
+                    <button
+                        className="clear example-btn"
+                        onClick={setAugustCovidPopulation}
+                    >
                         Total COVID-19 Cases by Country
                         <span>August 2020</span>
                     </button>
-                    <button className="clear example-btn" onClick={setStarDistance}>
+                    <button
+                        className="clear example-btn"
+                        onClick={setStarDistance}
+                    >
                         Distance to Brightest Stars
                         <span>In lightyears from Earth</span>
                     </button>
-                    <button className="clear example-btn" onClick={setCountryPopulation}>
+                    <button
+                        className="clear example-btn"
+                        onClick={setCountryPopulation}
+                    >
                         Population of Countries
                     </button>
-                    <button className="clear example-btn" onClick={setRandomData}>
+                    <button
+                        className="clear example-btn"
+                        onClick={setRandomData}
+                    >
                         Random Data
                         <span>Does not follow Benford's Law</span>
                     </button>

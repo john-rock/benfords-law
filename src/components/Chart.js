@@ -6,7 +6,8 @@ import { BarChart, Bar, XAxis, YAxis, LabelList } from "recharts";
 const Chart = () => {
   const { state } = useStateMachine(updateAction);
 
-  let fullResults = state.data.dataSet || [];
+  let rawResults = state.data.dataSet || [];
+  let fullResults = rawResults.filter(function(e){return e}) || [];
   let fullResultsCount = fullResults.length || 0;
 
   const fullResultsNumberArray = fullResults.map(function (n) {
@@ -141,7 +142,7 @@ const Chart = () => {
             dx: -25,
           }}
           type="number"
-          domain={[0, 40]}
+          domain={[0, 50]}
           fill="rgba(255,255,255, .2)"
         />
         <Bar dataKey="Occurance" fill="#01AD73" unit="%">
