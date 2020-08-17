@@ -83,6 +83,7 @@ a {
         @media (max-width: $breakpoint-tablet) {
             padding:.2rem;
             display: block;
+            box-sizing: border-box;
         }
     }
     a{

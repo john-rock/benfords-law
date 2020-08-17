@@ -4,6 +4,9 @@
     margin:0 0 4rem;
     padding:1rem;
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column-reverse;
+    }
     .header__container{
         padding:0 1rem;
         max-width:1440px;
