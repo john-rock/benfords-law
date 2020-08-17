@@ -35,6 +35,7 @@ a {
         padding:0 1rem;
         @media (max-width: $breakpoint-tablet) {
             flex-direction: column;
+            flex-flow: column;
         }
     }
 }
@@ -77,6 +78,8 @@ a {
 
 .sources{
     flex:1 1 100%;
+    width:100%;
+    word-wrap: break-word;
     color:#fff;
     margin-top:4rem;
     p{
