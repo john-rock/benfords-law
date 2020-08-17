@@ -12,6 +12,7 @@ body{
 a {
     color:#fff;
     transition: color 200ms ease;
+    color: $primary-color;
     &:visited {
         color:$primary-color;
     }
@@ -72,4 +73,15 @@ a {
     font-size:.8rem;
     opacity: .2;
     margin-top:2rem;
+}
+
+.sources{
+    color:#fff;
+    margin-top:4rem;
+    p{
+        margin-bottom: .1rem;
+    }
+    a{
+        font-size: .8rem;
+    }
 }

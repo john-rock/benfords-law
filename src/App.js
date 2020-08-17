@@ -8,6 +8,7 @@ import Header from './components/Header'
 import DataForm from './components/DataForm'
 import Chart from './components/Chart'
 import Info from './components/Info'
+import Sources from './components/Sources'
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Info />
             <DataForm />
             <Chart />
+            <Sources />
         </div>
       </div>
     </StateMachineProvider>
