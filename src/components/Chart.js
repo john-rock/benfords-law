@@ -1,7 +1,7 @@
 import React from "react";
 import { useStateMachine } from "little-state-machine";
 import updateAction from "../utils/updateAction";
-import { BarChart, Bar, XAxis, YAxis, LabelList, ComposedChart, Line, Tooltip, Legend } from "recharts";
+import { Bar, XAxis, YAxis, ComposedChart, Line, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const Chart = () => {
   const { state } = useStateMachine(updateAction);
@@ -129,6 +129,7 @@ const Chart = () => {
           Order of Mangnitude:<span>{orderOfMagnitude}</span>
         </div>
       </div>
+      <ResponsiveContainer width="100%" height={400}>
       <ComposedChart
         className="sub-component"
         width={900}
@@ -162,6 +163,7 @@ const Chart = () => {
         <Legend />
         <Tooltip cursor={false}/>
       </ComposedChart>
+      </ResponsiveContainer>
     </div>
   );
 };

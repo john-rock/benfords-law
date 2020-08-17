@@ -1,6 +1,11 @@
 .chart{
     display:flex;
     flex-direction: column;
+    width:70%;
+    height:100%;
+    @media (max-width: $breakpoint-tablet) {
+        width:100%;
+    }
     &:nth-of-type(1){
         flex:1 1 100%;
     }
@@ -19,6 +24,9 @@
             padding: 1rem;
             margin:1rem 0;
             font-size: .8rem;
+            @media (max-width: $breakpoint-tablet) {
+                flex:1 0 100%;
+            }
             span{
                 display: block;
                 font-size:2rem;
@@ -43,6 +51,7 @@
     background-color:#000 !important;
     .recharts-default-tooltip{
         background-color:#1F2024 !important;
+        border:0 !important;
     }
     .recharts-tooltip-label{
         color:#fff;
