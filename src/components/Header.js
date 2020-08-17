@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__container">
-                <div className="logo">Benford's Law Calculator</div>
+                <h1 className="logo">Benford's Law Calculator</h1>
             </div>
         </div>
     )

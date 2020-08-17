@@ -80,6 +80,10 @@ a {
     margin-top:4rem;
     p{
         margin-bottom: .1rem;
+        @media (max-width: $breakpoint-tablet) {
+            padding:.2rem;
+            display: block;
+        }
     }
     a{
         font-size: .8rem;

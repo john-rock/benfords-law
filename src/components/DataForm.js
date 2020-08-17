@@ -69,6 +69,7 @@ const DataForm = () => {
                         name="dataSet"
                         as={ParseTextarea}
                         control={control}
+                        label="Dataset"
                     />
                     <button className="submit" type="submit">
                         Submit
