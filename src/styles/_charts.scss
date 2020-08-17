@@ -38,3 +38,13 @@
         }
     }
 }
+
+.recharts-tooltip-wrapper {
+    background-color:#000 !important;
+    .recharts-default-tooltip{
+        background-color:#1F2024 !important;
+    }
+    .recharts-tooltip-label{
+        color:#fff;
+    }
+}

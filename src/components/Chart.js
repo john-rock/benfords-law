@@ -1,7 +1,7 @@
 import React from "react";
 import { useStateMachine } from "little-state-machine";
 import updateAction from "../utils/updateAction";
-import { BarChart, Bar, XAxis, YAxis, LabelList } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, LabelList, ComposedChart, Line, Tooltip, Legend } from "recharts";
 
 const Chart = () => {
   const { state } = useStateMachine(updateAction);
@@ -69,38 +69,47 @@ const Chart = () => {
     {
       name: "1",
       Occurance: percentOne,
+      bL: 30.1
     },
     {
       name: "2",
       Occurance: percentTwo,
+      bL: 17.6
     },
     {
       name: "3",
       Occurance: percentThree,
+      bL: 12.5
     },
     {
       name: "4",
       Occurance: percentFour,
+      bL: 9.7
     },
     {
       name: "5",
       Occurance: percentFive,
+      bL: 7.9
     },
     {
       name: "6",
       Occurance: percentSix,
+      bL: 6.7
     },
     {
       name: "7",
       Occurance: percentSeven,
+      bL: 5.8
     },
     {
       name: "8",
       Occurance: percentEight,
+      bL: 5.1
     },
     {
       name: "9",
       Occurance: percentNine,
+      bL: 4.6
     },
   ];
 
@@ -120,10 +129,11 @@ const Chart = () => {
           Order of Mangnitude:<span>{orderOfMagnitude}</span>
         </div>
       </div>
-      <BarChart
+      <ComposedChart
         className="sub-component"
         width={900}
         height={400}
+        throttleDelay={150}
         data={chartData}
         margin={{
           top: 5,
@@ -142,13 +152,16 @@ const Chart = () => {
             dx: -25,
           }}
           type="number"
-          domain={[0, 50]}
+          domain={[0, 40]}
           fill="rgba(255,255,255, .2)"
         />
-        <Bar dataKey="Occurance" fill="#01AD73" unit="%">
-          <LabelList dataKey="Occurance" position="top" fill="white" unit="%" />
+        
+        <Bar dataKey="Occurance" name="Entered Data Distribution" fill="#01AD73" unit="%">
         </Bar>
-      </BarChart>
+        <Line type='monotone' name="Benford's Law Distribution" dataKey='bL' stroke='#fff' dot={false} strokeWidth={2} strokeDasharray="5 5" unit="%"/>
+        <Legend />
+        <Tooltip cursor={false}/>
+      </ComposedChart>
     </div>
   );
 };
