@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StateMachineProvider, createStore } from "little-state-machine";
+import ReactGA from 'react-ga';
 
 import './styles/styles.scss';
 import './styles/App.css';
@@ -13,6 +14,11 @@ import Sources from './components/Sources'
 
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.initialize('UA-175545284-1');
+    ReactGA.pageview(window.location.pathname);
+  }, []);
 
   createStore({
     data: {}
