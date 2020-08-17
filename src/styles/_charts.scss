@@ -5,6 +5,7 @@
     height:100%;
     @media (max-width: $breakpoint-tablet) {
         width:100%;
+        flex-direction: column-reverse;
     }
     &:nth-of-type(1){
         flex:1 1 100%;
