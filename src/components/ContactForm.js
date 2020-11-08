@@ -17,7 +17,7 @@ const ContactForm = () => {
           fontSize: '16px',
         },
       }
-  const [openSnackbar, closeSnackbar] = useSnackbar(options)
+  const [openSnackbar] = useSnackbar(options)
 
   // Post-Submit Navigate
   const postSubmit = () => {
