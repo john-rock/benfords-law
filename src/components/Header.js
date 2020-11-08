@@ -9,7 +9,7 @@ const Header = () => {
             <div className="header">
                 <div className="header__container">
                     <h1 className="logo">Benford's Law Calculator</h1>
-                    <Menu right width={'370px'}>
+                    <Menu right width={'320px'}>
                         <h2>Thank You.</h2>
                         <p>
                             If you have found this tool useful or would like to
