@@ -165,6 +165,13 @@ a {
     display: inline-block;
     margin-bottom:2rem;
   }
+
+  p.bm-item{
+      margin-bottom:1rem;
+      &:last-of-type{
+          margin-bottom:2rem;
+      }
+  }
   
   /* Styling of overlay */
   .bm-overlay {

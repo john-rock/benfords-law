@@ -54,3 +54,24 @@
         }
     }
 }
+
+.menu-links{
+    a{
+        display: block;
+        background:$primary-color;
+        transition: background 200ms ease;
+        color:#fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 4px;
+        padding:.5rem;
+        margin-bottom: .8rem;
+        &:last-of-type{
+            background:none;
+            color:#fff;
+            &:hover{
+                background:$primary-color;
+            }
+        }
+    }
+}
