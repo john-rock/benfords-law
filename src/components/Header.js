@@ -11,10 +11,10 @@ const Header = () => {
       <div className="header">
         <div className="header__container">
           <h1 className="logo">Benford's Law Calculator</h1>
-          <Menu right width={"320px"}>
+          <Menu right width={"350px"}>
             <h2>Thank You.</h2>
             <p>I hope you have found this tool helpful.</p>
-            <p>Visit us on Github to contribute or view our project roadmap.</p>
+            <p>Visit us on Github to contribute or view our project roadmap below.</p>
             {/* <ContactForm /> */}
             <div className="menu-links">
               <a
