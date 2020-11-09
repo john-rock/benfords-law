@@ -57,7 +57,9 @@
 
 .menu-links{
     a{
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background:$primary-color;
         transition: background 200ms ease;
         color:#fff;
@@ -66,12 +68,18 @@
         border-radius: 4px;
         padding:.5rem;
         margin-bottom: .8rem;
+        &:visited{
+            color:#fff;
+        }
         &:last-of-type{
             background:none;
             color:#fff;
             &:hover{
                 background:$primary-color;
             }
+        }
+        svg{
+            margin-right: 5px;
         }
     }
 }
