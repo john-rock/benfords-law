@@ -2,6 +2,8 @@ import React from "react";
 import { useStateMachine } from "little-state-machine";
 import updateAction from "../utils/updateAction";
 import { Bar, XAxis, YAxis, ComposedChart, Line, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import FileSaver from "file-saver";
+import { getPngData } from "recharts-to-png";
 
 const Chart = () => {
   const { state } = useStateMachine(updateAction);
@@ -65,6 +67,15 @@ const Chart = () => {
   let percentNineFull = (firstDigitFreq[9] / fullResultsCount) * 100 || 0;
   let percentNine = percentNineFull.toFixed(1) || 0;
 
+  const [chart, setChart] = React.useState();
+
+  const handleDownload = React.useCallback(async () => {
+    // Send the chart to getPngData
+    const pngData = await getPngData(chart);
+    // Use FileSaver to download the PNG
+    FileSaver.saveAs(pngData, "test.png");
+  }, [chart]);
+
   const chartData = [
     {
       name: "1",
@@ -113,6 +124,7 @@ const Chart = () => {
     },
   ];
 
+
   return (
     <div className="component chart">
       <div className="info-container">
@@ -132,6 +144,7 @@ const Chart = () => {
       <ResponsiveContainer width="100%" height={400}>
       <ComposedChart
         className="sub-component"
+        ref={(ref) => setChart(ref)}
         width={900}
         height={400}
         throttleDelay={150}
@@ -164,6 +177,9 @@ const Chart = () => {
         <Tooltip cursor={false}/>
       </ComposedChart>
       </ResponsiveContainer>
+      <span>
+        <button onClick={handleDownload}>Download</button>
+      </span>
     </div>
   );
 };
