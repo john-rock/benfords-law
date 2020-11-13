@@ -84,6 +84,7 @@ const Chart = () => {
     const pngData = await getPngData(chart, {
       // y: 450,
       scrollY: -window.scrollY,
+      scrollX: -window.scrollX,
       backgroundColor: null
     });
     // Use FileSaver to download the PNG
