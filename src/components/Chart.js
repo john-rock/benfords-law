@@ -86,7 +86,7 @@ const Chart = () => {
       backgroundColor: null
     });
     // Use FileSaver to download the PNG
-    FileSaver.saveAs(pngData, "test.png");
+    FileSaver.saveAs(pngData, "benfords-law-chart.png");
   }, [chart]);
 
   const chartData = [
