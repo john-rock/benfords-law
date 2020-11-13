@@ -82,7 +82,8 @@ const Chart = () => {
   const handleDownload = React.useCallback(async () => {
     // Send the chart to getPngData
     const pngData = await getPngData(chart, {
-      y: 450,
+      // y: 450,
+      scrollY: -window.scrollY,
       backgroundColor: null
     });
     // Use FileSaver to download the PNG
