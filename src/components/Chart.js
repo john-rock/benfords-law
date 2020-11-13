@@ -1,13 +1,27 @@
 import React from "react";
 import { useStateMachine } from "little-state-machine";
 import updateAction from "../utils/updateAction";
-import { Bar, XAxis, YAxis, ComposedChart, Line, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  Bar,
+  XAxis,
+  YAxis,
+  ComposedChart,
+  Line,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import FileSaver from "file-saver";
+import { getPngData } from "recharts-to-png";
 
 const Chart = () => {
   const { state } = useStateMachine(updateAction);
 
   let rawResults = state.data.dataSet || [];
-  let fullResults = rawResults.filter(function(e){return e}) || [];
+  let fullResults =
+    rawResults.filter(function (e) {
+      return e;
+    }) || [];
   let fullResultsCount = fullResults.length || 0;
 
   const fullResultsNumberArray = fullResults.map(function (n) {
@@ -15,10 +29,8 @@ const Chart = () => {
     return parseInt(n);
   });
 
-  let fullResultsMax =
-    Math.max.apply(Math, fullResultsNumberArray) || 0;
-  let fullResultsMin =
-    Math.min.apply(Math, fullResultsNumberArray) || 0;
+  let fullResultsMax = Math.max.apply(Math, fullResultsNumberArray) || 0;
+  let fullResultsMin = Math.min.apply(Math, fullResultsNumberArray) || 0;
 
   let orderOfMagnitude = Math.floor(
     Math.LOG10E * Math.log(fullResultsMax - fullResultsMin) || 0
@@ -65,56 +77,69 @@ const Chart = () => {
   let percentNineFull = (firstDigitFreq[9] / fullResultsCount) * 100 || 0;
   let percentNine = percentNineFull.toFixed(1) || 0;
 
+  const [chart, setChart] = React.useState();
+
+  const handleDownload = React.useCallback(async () => {
+    // Send the chart to getPngData
+    const pngData = await getPngData(chart, {
+      y: 450,
+      backgroundColor: null
+    });
+    // Use FileSaver to download the PNG
+    FileSaver.saveAs(pngData, "test.png");
+  }, [chart]);
+
   const chartData = [
     {
       name: "1",
       Occurance: percentOne,
-      bL: 30.1
+      bL: 30.1,
     },
     {
       name: "2",
       Occurance: percentTwo,
-      bL: 17.6
+      bL: 17.6,
     },
     {
       name: "3",
       Occurance: percentThree,
-      bL: 12.5
+      bL: 12.5,
     },
     {
       name: "4",
       Occurance: percentFour,
-      bL: 9.7
+      bL: 9.7,
     },
     {
       name: "5",
       Occurance: percentFive,
-      bL: 7.9
+      bL: 7.9,
     },
     {
       name: "6",
       Occurance: percentSix,
-      bL: 6.7
+      bL: 6.7,
     },
     {
       name: "7",
       Occurance: percentSeven,
-      bL: 5.8
+      bL: 5.8,
     },
     {
       name: "8",
       Occurance: percentEight,
-      bL: 5.1
+      bL: 5.1,
     },
     {
       name: "9",
       Occurance: percentNine,
-      bL: 4.6
+      bL: 4.6,
     },
   ];
 
   return (
     <div className="component chart">
+      <div ref={(ref) => setChart(ref)}>
       <div className="info-container">
         <div className="inner sub-component">
           Number of Entries:<span>{fullResultsCount}</span>
@@ -129,41 +154,62 @@ const Chart = () => {
           Order of Mangnitude:<span>{orderOfMagnitude}</span>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height={400}>
-      <ComposedChart
-        className="sub-component"
-        width={900}
+      <ResponsiveContainer
+        width="100%"
         height={400}
-        throttleDelay={150}
-        data={chartData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <XAxis dataKey="name" fill="rgba(255,255,255, .2)" />
-        <YAxis
-          label={{
-            value: "Leading Digit Frequency (%)",
-            angle: -90,
-            position: "center",
-            fill: "rgba(255,255,255, .2)",
-            dx: -25,
-          }}
-          type="number"
-          domain={[0, 40]}
-          fill="rgba(255,255,255, .2)"
-        />
         
-        <Bar dataKey="Occurance" name="Entered Data Distribution" fill="#01AD73" unit="%">
-        </Bar>
-        <Line type='monotone' name="Benford's Law Distribution" dataKey='bL' stroke='#fff' dot={false} strokeWidth={2} strokeDasharray="5 5" unit="%"/>
-        <Legend />
-        <Tooltip cursor={false}/>
-      </ComposedChart>
+      >
+        <ComposedChart
+          className="sub-component"
+          width={900}
+          height={400}
+          throttleDelay={150}
+          data={chartData}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <XAxis dataKey="name" fill="rgba(255,255,255, .2)" />
+          <YAxis
+            label={{
+              value: "Leading Digit Frequency (%)",
+              angle: -90,
+              position: "center",
+              fill: "rgba(255,255,255, .2)",
+              dx: -25,
+            }}
+            type="number"
+            domain={[0, 40]}
+            fill="rgba(255,255,255, .2)"
+          />
+
+          <Bar
+            dataKey="Occurance"
+            name="Entered Data Distribution"
+            fill="#01AD73"
+            unit="%"
+          ></Bar>
+          <Line
+            type="monotone"
+            name="Benford's Law Distribution"
+            dataKey="bL"
+            stroke="#fff"
+            dot={false}
+            strokeWidth={2}
+            strokeDasharray="5 5"
+            unit="%"
+          />
+          <Legend />
+          <Tooltip cursor={false} />
+        </ComposedChart>
       </ResponsiveContainer>
+      </div>
+      <span className="dl-container">
+        <button onClick={handleDownload}>Download Chart</button>
+      </span>
     </div>
   );
 };

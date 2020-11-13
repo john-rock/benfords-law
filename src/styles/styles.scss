@@ -185,3 +185,20 @@ a {
   div[class^="Snackbar_snackbar-wrapper"] {
     z-index: 9999999;
   }
+
+  // Download Button
+  .dl-container{
+    display: flex;
+    justify-content: flex-end;
+      button{
+        display: inline-block;
+        width: auto;
+        background: $primary-color;
+        color:#fff;
+        transition: background 200ms ease;
+        &:hover{
+            background:darken($primary-color, 4)
+        }
+      }
+  }
+  
