@@ -196,6 +196,9 @@ a {
         background: $primary-color;
         color:#fff;
         transition: background 200ms ease;
+        @media (max-width: $breakpoint-phone) {
+          width:100%;
+        }
         &:hover{
             background:darken($primary-color, 4)
         }
