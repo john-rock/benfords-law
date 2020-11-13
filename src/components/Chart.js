@@ -207,8 +207,8 @@ const Chart = () => {
         </ComposedChart>
       </ResponsiveContainer>
       </div>
-      <span>
-        <button onClick={handleDownload}>Download</button>
+      <span className="dl-container">
+        <button onClick={handleDownload}>Download Chart</button>
       </span>
     </div>
   );
