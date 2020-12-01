@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { StateMachineProvider, createStore } from "little-state-machine";
 import SnackbarProvider from "react-simple-snackbar";
 import ReactGA from "react-ga";
-import { Helmet } from "react-helmet";
 
 import "./styles/styles.scss";
 import "./styles/App.css";
@@ -25,12 +24,6 @@ function App() {
 
   return (
     <>
-      <Helmet>
-        <meta
-          name="google-site-verification"
-          content="lt6dUNT7dUmojTc3ZQvk2XPKIn7Bj-bE0Yk21xYfspM"
-        />
-      </Helmet>
       <SnackbarProvider>
         <StateMachineProvider>
           <div className="app">
