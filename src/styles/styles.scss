@@ -59,10 +59,19 @@ a {
     color:#fff;
 }
 
+.instructions {
+  max-width: 1440px;
+  padding:0 1rem;
+  margin:0 auto;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
 .intro-text{
+    max-width:800px;
     flex:1 1 100%;
     color:#fff;
-    margin:0 0 2rem;
+    margin:8rem auto 2rem;
     p{
         margin-bottom:1rem;
         font-size: 1.2rem;
