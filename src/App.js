@@ -25,7 +25,6 @@ function App() {
           data-domain='benfords-law.netlify.app'
           src='https://plausible.io/js/plausible.js'
         ></script>
-        <script data-ad-client="ca-pub-1767887989966143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Helmet>
       <SnackbarProvider>
         <StateMachineProvider>
