@@ -12,7 +12,6 @@
     "global": "^4.4.0",
     "js-file-download": "^0.4.12",
     "little-state-machine": "^3.1.4",
-    "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-burger-menu": "^2.9.2",
     "react-dom": "^16.14.0",
@@ -28,6 +27,7 @@
     "react-use": "^15.3.8",
     "recharts": "^1.8.5",
     "recharts-to-png": "^0.7.0",
+    "sass": "^1.49.0",
     "use-global-hook": "^0.1.13",
     "window": "^4.2.7"
   },

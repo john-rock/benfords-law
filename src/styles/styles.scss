@@ -4,213 +4,212 @@
 @import './header';
 @import './charts';
 
-body{
-    background: #1f2024;
-    font-family: $primary-font;
+body {
+  background: #1f2024;
+  font-family: $primary-font;
 }
 
 a {
-    color:#fff;
-    transition: color 200ms ease;
+  color: #fff;
+  transition: color 200ms ease;
+  color: $primary-color;
+  &:visited {
     color: $primary-color;
-    &:visited {
-        color:$primary-color;
-    }
-    &:hover, &:active {
-        color:$primary-font !important;
-        
+  }
+  &:hover,
+  &:active {
+    color: $primary-font !important;
+  }
+}
+
+.app {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    max-width: 1440px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      flex-flow: column;
     }
   }
-
-
-.app{
-    .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-flow: row wrap;
-        max-width:1440px;
-        width:100%;
-        margin:2rem auto;
-        padding:0 1rem;
-        @media (max-width: $breakpoint-tablet) {
-            flex-direction: column;
-            flex-flow: column;
-        }
-    }
 }
 
-.component{
-    padding:1rem;
-    .sub-component{
-        background: #404351;
-        background: -webkit-linear-gradient(top left, #404351, #2E2D3A);
-        background: -moz-linear-gradient(top left, #404351, #2E2D3A);
-        background: linear-gradient(to bottom right, #404351, #2E2D3A);
-        box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.05);
-    }
+.component {
+  padding: 1rem;
+  .sub-component {
+    background: #404351;
+    background: -webkit-linear-gradient(top left, #404351, #2e2d3a);
+    background: -moz-linear-gradient(top left, #404351, #2e2d3a);
+    background: linear-gradient(to bottom right, #404351, #2e2d3a);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.05);
+  }
 }
 
-.recharts-cartesian-axis-tick-value{
-    color:#fff;
+.recharts-cartesian-axis-tick-value {
+  color: #fff;
 }
 
-.recharts-legend-item-text{
-    color:#fff;
+.recharts-legend-item-text {
+  color: #fff;
 }
 
 .instructions {
   max-width: 1440px;
-  padding:0 1rem;
-  margin:0 auto;
+  padding: 0 1rem;
+  margin: 0 auto;
   color: #fff;
   font-size: 1.2rem;
 }
 
-.intro-text{
-    max-width:800px;
-    flex:1 1 100%;
-    color:#fff;
-    margin:8rem auto 2rem;
-    p{
-        margin-bottom:1rem;
-        font-size: 1.2rem;
-    }
+.intro-text {
+  color: #fff;
+  max-width: 800px;
+  width: 100%;
+  margin: 8rem auto 2rem;
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    width: 100%;
+    word-wrap: normal;
+  }
 }
 
-.example-data{
-    color:#fff;
-    font-size:.8rem;
-    opacity: .2;
-    margin-top:2rem;
+.example-data {
+  color: #fff;
+  font-size: 0.8rem;
+  opacity: 0.2;
+  margin-top: 2rem;
 }
 
-.sources{
-    flex:1 1 100%;
-    width:100%;
-    word-wrap: break-word;
-    color:#fff;
-    margin-top:4rem;
-    p{
-        margin-bottom: .1rem;
+.sources {
+  flex: 1 1 100%;
+  width: 100%;
+  word-wrap: break-word;
+  color: #fff;
+  margin-top: 4rem;
+  p {
+    margin-bottom: 0.1rem;
+  }
+  a {
+    font-size: 0.8rem;
+    display: block;
+    @media (max-width: $breakpoint-tablet) {
+      padding: 0.2rem;
+      box-sizing: border-box;
     }
-    a{
-        font-size: .8rem;
-        display: block;
-        @media (max-width: $breakpoint-tablet) {
-            padding:.2rem;
-            box-sizing: border-box;
-        }
-    }
+  }
 }
-
 
 // Hamburger Menu Styles
 /* Position and sizing of burger button */
 .bm-burger-button {
-    position: absolute;
-    width: 36px;
-    height: 30px;
-    right: 18px;
-    top: 5px;
-    @media (max-width: 540px) {
-        top:15px;
-    }
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 18px;
+  top: 5px;
+  @media (max-width: 540px) {
+    top: 15px;
   }
-  
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: #fff;
-    height: 5px !important;
-    transition: all 100ms ease;
-  }
-  
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: $primary-color;
-  }
-  
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-  
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: #bdc3c7;
-  }
-  
-  /*
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #fff;
+  height: 5px !important;
+  transition: all 100ms ease;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: $primary-color;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
   Sidebar wrapper styles
   Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
   */
-  .bm-menu-wrap {
-    position: fixed;
-    top:0;
-    height: 100%;
+.bm-menu-wrap {
+  position: fixed;
+  top: 0;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 0.8rem;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #fff;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+p.bm-item {
+  margin-bottom: 1rem;
+  &:last-of-type {
+    margin-bottom: 2rem;
   }
-  
-  /* General sidebar styles */
-  .bm-menu {
-    background: #373a47;
-    padding: .8rem;
-    font-size: 1.15em;
-  }
-  
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-  
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #fff;
-    padding: 0.8em;
-  }
-  
-  /* Individual item */
-  .bm-item {
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  left: -100px !important;
+  top: -100px !important;
+  width: 200% !important;
+  height: 200% !important;
+}
+
+div[class^='Snackbar_snackbar-wrapper'] {
+  z-index: 9999999;
+}
+
+// Download Button
+.dl-container {
+  display: flex;
+  justify-content: flex-end;
+  button {
     display: inline-block;
-    margin-bottom:2rem;
+    width: auto;
+    background: $primary-color;
+    color: #fff;
+    transition: background 200ms ease;
+    @media (max-width: $breakpoint-phone) {
+      width: 100%;
+    }
+    &:hover {
+      background: darken($primary-color, 4);
+    }
   }
-
-  p.bm-item{
-      margin-bottom:1rem;
-      &:last-of-type{
-          margin-bottom:2rem;
-      }
-  }
-  
-  /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-    left:-100px !important;
-    top:-100px !important;
-    width:200% !important;
-    height:200% !important;
-  }
-
-  div[class^="Snackbar_snackbar-wrapper"] {
-    z-index: 9999999;
-  }
-
-  // Download Button
-  .dl-container{
-    display: flex;
-    justify-content: flex-end;
-      button{
-        display: inline-block;
-        width: auto;
-        background: $primary-color;
-        color:#fff;
-        transition: background 200ms ease;
-        @media (max-width: $breakpoint-phone) {
-          width:100%;
-        }
-        &:hover{
-            background:darken($primary-color, 4)
-        }
-      }
-  }
-  
+}
