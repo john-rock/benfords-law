@@ -11,6 +11,7 @@ import DataForm from './components/DataForm';
 import Chart from './components/Chart';
 import Info from './components/Info';
 import Instructions from './components/Instructions';
+import Footer from './components/Footer';
 
 function App() {
   createStore({
@@ -39,6 +40,7 @@ function App() {
           </div>
         </StateMachineProvider>
       </SnackbarProvider>
+      <Footer />
     </>
   );
 }
