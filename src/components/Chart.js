@@ -62,7 +62,7 @@ const Chart = () => {
   let percentFourFull = (firstDigitFreq[4] / fullResultsCount) * 100 || 0;
   let percentFour = percentFourFull.toFixed(1) || 0;
 
-  let percentFiveFull = (firstDigitFreq[4] / fullResultsCount) * 100 || 0;
+  let percentFiveFull = (firstDigitFreq[5] / fullResultsCount) * 100 || 0;
   let percentFive = percentFiveFull.toFixed(1) || 0;
 
   let percentSixFull = (firstDigitFreq[6] / fullResultsCount) * 100 || 0;
